@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+header{
+background-color: #000000;
+width: 100%;
+height: 15vh;
+box-shadow:0 0 10px 0 #000000;
+display: flex;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+p{
+font: 500;
+font-size: 4rem;
+color: cornsilk;
+font-family: 'Righteous', cursive;
+margin-left:30px ;
+}
+
+#menu{
+    width: 80vw;
+    height: 150vh;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.capa-filme{
+    width: 17vw;
+    height: 45vh;
+    background-color: #1b1b1b;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.capa1{
+    display: flex;
+    margin-top: 10px;
+}
+.capa2{
+    display: flex;
+    margin-top: 10px;
+}
+.capa3{
+    display: flex;
+    margin-top: 10px;
+}
+#barra-pesquisa{
+    width: 20vw;
+    height: 5vh;
+    background-color: transparent;
+    border-radius: 10px;
+    border-bottom: 2px solid #ffffff;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 150px;
+}
+input::placeholder{
+    color: #ffffff;
+   outline: none;
+}
+button .btn-fav {
+    width: 2vw;
+    height: 5vh;
+    border-radius: 10px;
+   border-color: aliceblue;
+}
+#dropdown-org{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  margin-left: 40px;
+}
+.contorno-capa{
+    max-height: 50vh;
+    margin-top: -20px;
+    width: auto;
+}
+.movie{
+    width: 17vw;
+    height: 40vh;
+    background-color: #ff0000;
+}
+#estrela {
+    width: 2vw;
+    height: 3vh;
+    
+}
+.fantasma{
+    width: 15vw;
+    height: 5vh;
+    background: #ffffff;
+}
+.border{
+    display: flex;
+    height: 5vh;
+    width: 17vw;
+
+}
+#star{
+    width: 2vw;
+    height: 5vh;
+}
