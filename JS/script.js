@@ -1,33 +1,43 @@
-const pesquisar = document.querySelector ("#barra-pesquisa");
-pesquisar.addEventListener("keypress", function (e){
-    if(e.key=="Enter"){
-        e.preventDefault();
-        const conteudo = e.target.value;
-        const apiKey = "768c9c1";
-        fetch(`http://www.omdbapi.com/?s=${conteudo}&apikey=${apiKey}`).then(response =>{
-            return response.json();
-        }).then(corpo => vemApi(corpo));
-    }
-})
-    const vemApi = (corpo) => {
-        const nome = corpo.Search;
-        console.log(nome);
-        const test = corpo.Response;
-        if(test=="False"){
-            alert("Este filme não existe");
-        }
-    }
-    const listaMov = (json) => {
-        const lista = document.querySelector("menu");
-        lista.innerHTML = "";
+let inputBuscarFilme = document.querySelector("#input-buscar-filme");
+let btnBuscarFilme = document.querySelector("#barra-pesquisa");
+btnBuscarFilme.onclick= () => {
 
-        json.Search.forEach(Elemento=>{
-            console.log(Elemento);
-
-            let item = createElement("div");
-            item.classList.add("contorno-capa");
-            item.innerHTML = `<img src="${Elemento.Poster }"/><h1>${Elemento.Title}<h1/>`
-            lista.appendChild(item);
-            console.log("item")
-            })
-        }
+    if(inputBuscarFilme.value.length > 0) { 
+        let filmes = new Array();
+            fetch("https://www.omdbapi.com/?i=tt3896198&apikey=768c9c1&s="+inputBuscarFilme.value, {mode:"cors"})
+            .then((resp) => resp.json())
+            .then((resp)=>{ 
+                console.log(resp)
+                resp.Search.forEach ((item)=>{
+            console.log(item); 
+            let filme=new Filme(
+                item.imdbID,
+                item.Title,
+                item.Year,
+                null, 
+                null,
+                item.Poster,
+                null, 
+                null,
+                null,
+                null,
+                null
+            );
+            filmes.push(filme);
+        });
+        listarFilmes(filmes);
+        })
+    }
+        return false;
+    } 
+    
+    let listarFilmes = async (filmes) => { 
+    let listaFilmes = await document.querySelector("#lista-filmes"); 
+    listaFilmes.innerHTML = "";
+    console.log(listaFilmes);
+    if (filmes.length > 0) {
+    filmes.forEach(async (filme) => { 
+    listaFilmes.appendChild (await filme.getCard());
+    });
+    }
+}
