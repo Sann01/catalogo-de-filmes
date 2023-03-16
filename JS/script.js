@@ -1,5 +1,5 @@
 let inputBuscarFilme = document.querySelector("#input-buscar-filme");
-let btnBuscarFilme = document.querySelector("#barra-pesquisa");
+let btnBuscarFilme = document.querySelector("#btn-pesquisa");
 btnBuscarFilme.onclick= () => {
 
     if(inputBuscarFilme.value.length > 0) { 

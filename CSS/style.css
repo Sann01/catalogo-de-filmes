@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');  
 header{
 background-color: #000000;
 width: 100%;
@@ -6,23 +8,25 @@ height: 15vh;
 box-shadow:0 0 10px 0 #000000;
 display: flex;
 }
+#Logo-cineon{
+    height: 15.2vh;
+    margin-left: 1%;
+}
+section{
+    background-color: #646464;
+    min-height: 100%;
+}
 img{
     width: 100%;
     height: 100%;
 }
-p{
-font: 500;
-font-size: 4rem;
-color: cornsilk;
-font-family: 'Righteous', cursive;
-margin-left:30px ;
-}
 
-#menu{
-    width: 80vw;
-    height: 150vh;
-    margin-left: 20px;
-    margin-right: 20px;
+p{
+    font-size: 4rem;
+    font-weight: 700;
+    color: cornsilk;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-left:30px ;
 }
 .capa-filme{
     width: 17vw;
@@ -45,19 +49,36 @@ margin-left:30px ;
     display: flex;
     margin-top: 10px;
 }
-#barra-pesquisa{
-    width: 20vw;
-    height: 5vh;
+#btn-pesquisa{
+    width: 5vw;
+    height: 6vh;
     background-color: transparent;
     border-radius: 10px;
-    border-bottom: 2px solid #ffffff;
     text-decoration: none;
     color: #ffffff;
-    margin-left: 150px;
+    border: 1px solid #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-left: 1%;
 }
-input::placeholder{
-    color: #ffffff;
-   outline: none;
+#btn-pesquisa:hover{
+    color: #000000;
+    border:solid #000000 1px; 
+    background-color: #ffffff;
+    
+}
+#input-buscar-filme{
+    border: 1px solid #000000;
+    width: 15vw;
+    height: 6vh;
+    border-radius: 10px;
+    
+}
+#input-buscar-filme::placeholder{
+    color: #000000;
+}
+.d-flex{
+    margin-top: 2%;
+    margin-left: 13%;
 }
 button .btn-fav {
     width: 2vw;
@@ -65,39 +86,76 @@ button .btn-fav {
     border-radius: 10px;
    border-color: aliceblue;
 }
-#dropdown-org{
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 25px;
-  margin-left: 40px;
+.card-body{
+    width:100% ;
+    height: 100%;
+    background-color: #1b1b1b;
+    border-radius: 0 0 10px 10px;
 }
-.contorno-capa{
-    max-height: 50vh;
-    margin-top: -20px;
-    width: auto;
+.card-ing-topz {
+    width:100% ;
+    height: 70%;
+    border-radius: 10px 10px 0 0;
 }
-.movie{
-    width: 17vw;
-    height: 40vh;
-    background-color: #ff0000;
-}
-#estrela {
-    width: 2vw;
-    height: 3vh;
-    
-}
-.fantasma{
-    width: 15vw;
-    height: 5vh;
-    background: #ffffff;
-}
-.border{
+.card{
+    flex-direction: row;
+    width: 20%;    
+    height: 50%;
+    max-width: 20%;
+    min-width: 10%;
     display: flex;
-    height: 5vh;
-    width: 17vw;
-
+    align-items: center;
+    justify-content: center;
+    background-color: #1E1E1E;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 12pt;
+    border-radius: 10px; 
+    font-family: 'Roboto Condensed', sans-serif;
+    border: none;
 }
-#star{
-    width: 2vw;
-    height: 5vh;
+#lista-filmes{
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
+    background-color: #000000;
+}
+.btn.btn-outline-home{
+    color: #ffffff;
+    width: 10vw;
+    height: 6vh;
+    border:solid #ffffff 1px; 
+    margin-top:2%;
+    margin-left: 9%;
+}
+.btn.btn-outline-home:hover{
+    color: #000000;
+    border:solid #000000 1px; 
+    background-color: #ffffff;
+}
+.btn.btn-outline-favoritos{
+    color: #ffffff;
+    width: 10vw;
+    height: 6vh;
+    border: 1px solid #ffffff;
+    margin-top:2%;
+    margin-left: 1%;
+}
+.btn.btn-outline-favoritos:hover{
+    color: #000000;
+    border:solid #000000 1px; 
+    background-color: #ffffff;
+}
+.btn.genero{
+    color: #ffffff;
+    border:solid #ffffff 1px; 
+    width: 10vw;
+    height: 6vh;
+    margin-top:20%;
+    margin-left: 5%;
+}
+.btn.genero:hover{
+    color: #000000;
+    border:solid #000000 1px; 
+    background-color: #ffffff;
 }
