@@ -113,7 +113,9 @@ class Filme{
         anoDetalhes.setAttribute("class", "card-informacoes");
         let generoDetalhes = document.createElement("p");
         generoDetalhes.setAttribute("class", "card-informacoes");
+        
 
+        
 
         hCardTitle.appendChild(document.createTextNode (this.titulo));
         classificacaoDetalhes.appendChild(document.createTextNode (this.classificacao));
@@ -134,15 +136,25 @@ class Filme{
         divDetalhes.appendChild(atorDetalhes);
         divDetalhes.appendChild(sinopseDetalhes);
         divDetalhes.appendChild(direcaoDetalhes);
-        
-        
+
+       
         
         card2.appendChild(imgCartaz); 
         card2.appendChild(cardBody);
         cardBody.appendChild(hCardTitle);
         cardBody.appendChild(divDetalhes);
         
+        let btnSalvar=document.createElement("button");
+        btnSalvar.appendChild(document.createTextNode("Salvar"));
+        btnSalvar.setAttribute("id", "btnSalvar");
+        divDetalhes.appendChild(btnSalvar);
+        
+        let btnFechar=document.createElement("button");
+        btnFechar.appendChild(document.createTextNode("Fechar"));
+        btnFechar.setAttribute("id","btnFechar");
+        divDetalhes.appendChild(btnFechar);
         return card2;
+
         }
         
 }

@@ -25,7 +25,7 @@ btnBuscarFilme.onclick= () => {
             );
             filmes.push(filme);
         });
-        listarFilmes(filmes);
+        listarFilmes(filmes); 
         })
     }
         return false;
@@ -33,8 +33,10 @@ btnBuscarFilme.onclick= () => {
     let listaFilmes = document.querySelector("#lista-filmes")
     
     let listarFilmes = async (filmes) => { 
+        let mostrarFilme = document.querySelector("#mostrar-filme");
     let listaFilmes = await document.querySelector("#lista-filmes"); 
     listaFilmes.innerHTML = "";
+    mostrarFilme.innerHTML = "";
     
 
     let detalhe = await document.querySelector("#lista-filmes"); 
@@ -50,7 +52,8 @@ btnBuscarFilme.onclick= () => {
                 }
             });
         }
-    }
+    }   
+
     let detalhesFilme = async (id) => {
         fetch("https://www.omdbapi.com/?&apikey=768c9c1&i="+id)
         .then((resp) => resp.json())
@@ -74,9 +77,21 @@ btnBuscarFilme.onclick= () => {
     let detalhe = document.querySelector("#mostrar-filme"); 
     detalhe.innerHTML = "";
     detalhe.appendChild(filme.getDetalhes());
-            console.log(filme);
+    document.querySelector("#mostrar-filme").appendChild(filme.getDetalhes());
+            document.querySelector("#lista-filmes").style.display="none";
+            document.querySelector("#mostrar-filme").style.display="flex";
+            document.querySelector("#mostrar-filme").appendChild(filme.getDetalhesFilme());
+
+            document.querySelector("#btnFechar").onclick = () =>{
+                document.querySelector("#lista-filmes").style.display="flex";
+                document.querySelector("#mostrar-filme").innerHTML="";
+                document.querySelector("#mostrar-filme").style.display="none";
+            }
+            document.querySelector("#btnSalvar").onclick = () => {
+                salvarFilme(filme);
+            }
             
-     })
+     });;
      
      
 }
