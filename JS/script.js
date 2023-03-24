@@ -77,7 +77,7 @@ btnBuscarFilme.onclick= () => {
     let detalhe = document.querySelector("#mostrar-filme"); 
     detalhe.innerHTML = "";
     detalhe.appendChild(filme.getDetalhes());
-    document.querySelector("#mostrar-filme").appendChild(filme.getDetalhes());
+    
             document.querySelector("#lista-filmes").style.display="none";
             document.querySelector("#mostrar-filme").style.display="flex";
             document.querySelector("#mostrar-filme").appendChild(filme.getDetalhesFilme());
