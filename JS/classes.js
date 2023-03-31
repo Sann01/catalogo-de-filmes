@@ -145,7 +145,7 @@ class Filme{
         cardBody.appendChild(divDetalhes);
         
         let btnSalvar=document.createElement("button");
-        btnSalvar.appendChild(document.createTextNode("Salvar"));
+        btnSalvar.appendChild(document.createTextNode("Favoritar"));
         btnSalvar.setAttribute("id", "btnSalvar");
         divDetalhes.appendChild(btnSalvar);
         
@@ -153,8 +153,12 @@ class Filme{
         btnFechar.appendChild(document.createTextNode("Fechar"));
         btnFechar.setAttribute("id","btnFechar");
         divDetalhes.appendChild(btnFechar);
+        
+        let btnLimparFavoritos=document.createElement("button");
+        btnLimparFavoritos.appendChild(document.createTextNode("Desfavoritar"));
+        btnLimparFavoritos.setAttribute("id","btnLimparFavoritos");
+        divDetalhes.appendChild(btnLimparFavoritos);
         return card2;
-
         }
         
 }
