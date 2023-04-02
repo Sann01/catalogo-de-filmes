@@ -71,6 +71,17 @@ p{
     background-color: #ffffff;
     
 }
+#btnEditar{
+    color: #ffffff;
+    background-color: #6e0505;
+    margin-top: 1%;
+    border-radius: 10px;
+    width: 8vw;
+    height: 5vh;
+    border:solid 1px #000000;
+    margin-top: 50px;
+    box-shadow: 2px 2px;
+}
 #input-buscar-filme{
     border: 1px solid #000000;
     width: 20vw;
@@ -84,12 +95,6 @@ p{
     margin-top: 2%;
     margin-left: 10%;
     margin-right: 5%;
-}
-button .btn-fav {
-    width: 2vw;
-    height: 5vh;
-    border-radius: 10px;
-   border-color: aliceblue;
 }
 .card-body{
     width:100% ;
@@ -406,8 +411,91 @@ img.card-img{
         display: flex;
         flex-wrap:wrap;
         height: 100%;
-
     }
-
+  }
+  @media(max-width: 390px){
+    .btnDetalhesFilme{
+        color: #ffffff;
+        background-color: #000000;
+        margin-top: 1%;
+        border-radius: 10px;
+        height: 4vh;
+        width:15vw;
+        border:solid 1px #ffffff;
+        margin-top: 50px;
+        box-shadow: 2px 2px;
+        margin-left: -10px;
+        font-size: 0.82rem;
+    }
+    .btnDetalhesFilme:hover{
+        color: #000000;
+        background-color: #ffffff;
+        border: solid 2px #000000;
+    }
+    #btn-pesquisa{
+        width: 12vw;
+        height: 4vh;
+        background-color: transparent;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        font-family: 'Roboto Condensed', sans-serif;
+        margin-top: 15%;
+        font-size: 0.82rem;
+    }
+    #input-buscar-filme{
+        border: 1px solid #000000;
+        width: 25vw;
+        height: 4vh;
+        margin-left: -10%;
+        border-radius: 10px;
+        margin-top: 15%;
+        font-size: 0.82rem;
+    }
+    .btn.btn-outline-favoritos{
+        color: #ffffff;
+        width: 16vw;
+        height: 4vh;
+        border: 1px solid #ffffff;
+        margin-top: 9%;
+        margin-left: 2%;
+        box-shadow: 2px 2px;
+        font-size: 0.82rem;
+    }
+    .btn.btn-outline-favoritos:hover{
+        color: #000000;
+        border:solid #000000 1px; 
+        background-color: #ffffff;
+    }
+    .btn.btn-outline-home{
+        color: #ffffff;
+        width: 14vw;
+        height: 4vh;
+        border:solid #ffffff 1px; 
+        margin-top:9%;
+        box-shadow: 2px 2px;
+        font-size: 0.82rem;
+    }
+    .btn.btn-outline-home:hover{
+        color: #000000;
+        border:solid #000000 1px; 
+        background-color: #ffffff;
+    }
+    .btn.genero{
+        color: #ffffff;
+        border:solid #ffffff 1px; 
+        width: 16vw;
+        height: 4vh;
+        margin-left: 10%;
+        box-shadow: 2px 2px;  
+        margin-top: 60%;  
+        font-size: 0.82rem;
+    }
+    .btn.genero:hover{
+        color: #000000;
+        border:solid #000000 1px; 
+        background-color: #ffffff;
+    }
   }
   

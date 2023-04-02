@@ -55,6 +55,8 @@ btnBuscarFilme.onclick= () => {
         }
     }   
 
+    let filmeAtual;
+    
         let detalhesFilme = async (id) => {
             fetch("https://www.omdbapi.com/?&apikey=768c9c1&i="+id)
             .then((resp) => resp.json())
@@ -87,6 +89,7 @@ btnBuscarFilme.onclick= () => {
                     document.querySelector("#mostrar-filme").innerHTML="";
                     document.querySelector("#mostrar-filme").style.display="none";
                 }
+                
                 document.querySelector("#btnSalvar").onclick = () => {
                     let filmesString = localStorage.getItem("filmesFavoritos");
                     let filmes = new Array() ;
@@ -100,43 +103,40 @@ btnBuscarFilme.onclick= () => {
                     filmes=JSON.stringify(filmes);
                     localStorage.setItem("filmesFavoritos", filmes);
                 }
-                
+
+                    document.querySelector("#btnLimparFavoritos").onclick=()=>{
+                    let filmesFavoritos = localStorage.getItem("filmesFavoritos");
+                    filmesFavoritos = JSON.parse(filmesFavoritos);
+                    filmesFavoritos = filmesFavoritos.filter((filmeTeste) => filmeTeste.id !== filme.id);
+                    filmesFavoritos = JSON.stringify(filmesFavoritos);
+                    localStorage.setItem("filmesFavoritos", filmesFavoritos);
+                    listarFilmes();
+                    }
         });
     }
                 navFavoritos.onclick = () => {
-                    let filmesFavoritos = localStorage.getItem("filmesFavoritos");
-                    filmesFavoritos=JSON.parse(filmesFavoritos);
-                    let filmes = new Array();
-                    filmesFavoritos.forEach((item)=>{
-                        let filme = new Filme(
-                            item.id,
-                            item.titulo,
-                            item.ano,
-                            item.genero,
-                            item.duracao,
-                            item.sinopse,
-                            item.cartaz,
-                            item.direcao,
-                            item.elenco,
-                            item.classificacao,
-                            item.avaliacao,
-                        )
-                        filmes.push(filme)
-                    })
-                    listarFilmes(filmes);
-                    
+                    listarFavoritos();
                 }
-                
-                let desfavoritarFilme = (id) => {
-                    let filmesFavoritos = localStorage.getItem("filmesFavoritos");
-                    if (filmesFavoritos) {
-                      filmesFavoritos = JSON.parse(filmesFavoritos);
-                      let filmesAtualizados = filmesFavoritos.filter((filme) => filme.id !== id);
-                      filmesAtualizados = JSON.stringify(filmesAtualizados);
-                      localStorage.setItem("filmesFavoritos", filmesAtualizados);
-                    }
-                    
-                  };
-                
 
-            
+                let listarFavoritos = () =>{
+                        let filmesFavoritos = localStorage.getItem("filmesFavoritos");
+                        filmesFavoritos=JSON.parse(filmesFavoritos);
+                        let filmes = new Array();
+                        filmesFavoritos.forEach((item)=>{
+                            let filme = new Filme(
+                                item.id,
+                                item.titulo,
+                                item.ano,
+                                item.genero,
+                                item.duracao,
+                                item.sinopse,
+                                item.cartaz,
+                                item.direcao,
+                                item.elenco,
+                                item.classificacao,
+                                item.avaliacao,
+                            )
+                            filmes.push(filme)
+                        })
+                        listarFilmes(filmes);
+                    }

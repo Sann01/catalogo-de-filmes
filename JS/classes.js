@@ -158,6 +158,27 @@ class Filme{
         btnLimparFavoritos.appendChild(document.createTextNode("Desfavoritar"));
         btnLimparFavoritos.setAttribute("id","btnLimparFavoritos");
         divDetalhes.appendChild(btnLimparFavoritos);
+        
+        let btnEditar = document.createElement("button");
+        btnEditar.setAttribute("type", "text");
+        btnEditar.setAttribute("id","btnEditar");
+        divDetalhes.appendChild(btnEditar);
+
+         btnEditar.addEventListener('click',()=>{
+        
+          let novoTitulo = document.querySelector(".hCardTitle");
+          novoTitulo.innerHTML="";
+            document.querySelector("#classificacaoDetalhes").style.display="none";
+            document.querySelector("#duracaoDetalhes").style.display="none";
+            document.querySelector("#generoDetalhes").style.display="none";
+            document.querySelector("#anoDetalhes").style.display="none";
+            document.querySelector("#avaliacaoDetalhes").style.display="none";
+            document.querySelector("#atorDetalhes").style.display="none";
+
+        })
+
+        
+
         return card2;
         }
         
